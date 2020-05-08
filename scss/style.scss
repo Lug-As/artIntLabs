@@ -1,0 +1,138 @@
+// Шрифты
+@font-face {
+	font-family: "Muller-Reg";
+	src: url('../fonts/Muller/Regular/MullerRegular.eot');
+	src: url('../fonts/Muller/Regular/MullerRegular.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/Muller/Regular/MullerRegular.woff2') format('woff2'),
+			url('../fonts/Muller/Regular/MullerRegular.woff') format('woff'),
+			url('../fonts/Muller/Regular/MullerRegular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Muller-Bold";
+	src: url('../fonts/Muller/Bold/MullerBold.eot');
+	src: url('../fonts/Muller/Bold/MullerBold.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/Muller/Bold/MullerBold.woff2') format('woff2'),
+			url('../fonts/Muller/Bold/MullerBold.woff') format('woff'),
+			url('../fonts/Muller/Bold/MullerBold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Muller-XBold";
+	src: url('../fonts/Muller/ExtraBold/MullerExtraBold.eot');
+	src: url('../fonts/Muller/ExtraBold/MullerExtraBold.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/Muller/ExtraBold/MullerExtraBold.woff2') format('woff2'),
+			url('../fonts/Muller/ExtraBold/MullerExtraBold.woff') format('woff'),
+			url('../fonts/Muller/ExtraBold/MullerExtraBold.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+@mixin regular {
+	font-family: "Muller-Reg";
+}
+@mixin bold {
+	font-family: "Muller-Bold";
+}
+@mixin xbold {
+	font-family: "Muller-XBold";
+}
+//// Конец шрифтов
+// Переменные
+$main_color: #000B30;
+$text_color: #000000;
+$note_color: #88C4FF;
+//// Конец переменных
+// Базовые стили
+body {
+	@include regular;
+	font-size: 16px;
+	color: $text-color;
+}
+section {
+	padding: 35px 0;
+}
+input, button, a, textarea {
+	&:focus {
+		outline: none;
+	}
+}
+textarea {
+	resize: none;
+}
+//// Конец базовых стилей
+// Элементы
+.section {
+	&-header {
+		position: relative;
+	}
+	&-title {
+		@include xbold;
+		font-style: normal;
+		font-size: 36px;
+		line-height: 125%;
+		letter-spacing: 0.11em;
+		text-transform: uppercase;
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			display: block;
+			right: 100%;
+			margin-right: 5px;
+			top: 40%;
+			height: 1px;
+			width: 5%;
+			background: rgba(0, 0, 0, 0.25);
+		}
+		&_reg {
+			@include regular;
+		}
+
+		&_bold {
+			@include xbold;
+		}
+	}
+	&-subtitle {
+		height: 95px;
+		width: 65%;
+		position: relative;
+		&-text {
+			display: inline-block;
+			vertical-align: top;
+			height: 100%;
+			margin-bottom: 0;
+			margin-left: 20px;
+			font-size: 20px;
+			line-height: 150%;
+		}
+		&::before {
+			content: "";
+			line-height: 150%;
+			top: 50%;
+			transform: translateY(-55%);
+			display: inline-block;
+			position: absolute;
+			width: 11px;
+			height: 87%;
+			background-color: $note_color;
+		}
+	}
+	&-number {
+		position: absolute;
+		left: -7%;
+		top: 5px;
+		&-text {
+			display: inline-block;
+			font: {
+				family: sans-serif;
+				weight: 750;
+				size: 16px;
+			}
+			line-height: 1;
+			transform: rotate(-90deg);
+		}
+	}
+}
+//// Конец элементов
