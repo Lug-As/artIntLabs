@@ -1,31 +1,31 @@
 // Шрифты
 @font-face {
 	font-family: "Muller-Reg";
-	src: url("../fonts/Muller/Regular/MullerRegular.eot");
-	src: url("../fonts/Muller/Regular/MullerRegular.eot?#iefix") format("embedded-opentype"),
-		url("../fonts/Muller/Regular/MullerRegular.woff2") format("woff2"),
-		url("../fonts/Muller/Regular/MullerRegular.woff") format("woff"),
-		url("../fonts/Muller/Regular/MullerRegular.ttf") format("truetype");
+	src: url('../fonts/Muller/Regular/MullerRegular.eot');
+	src: url('../fonts/Muller/Regular/MullerRegular.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/Muller/Regular/MullerRegular.woff2') format('woff2'),
+			url('../fonts/Muller/Regular/MullerRegular.woff') format('woff'),
+			url('../fonts/Muller/Regular/MullerRegular.ttf') format('truetype');
 	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Muller-Bold";
-	src: url("../fonts/Muller/Bold/MullerBold.eot");
-	src: url("../fonts/Muller/Bold/MullerBold.eot?#iefix") format("embedded-opentype"),
-		url("../fonts/Muller/Bold/MullerBold.woff2") format("woff2"),
-		url("../fonts/Muller/Bold/MullerBold.woff") format("woff"),
-		url("../fonts/Muller/Bold/MullerBold.ttf") format("truetype");
+	src: url('../fonts/Muller/Bold/MullerBold.eot');
+	src: url('../fonts/Muller/Bold/MullerBold.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/Muller/Bold/MullerBold.woff2') format('woff2'),
+			url('../fonts/Muller/Bold/MullerBold.woff') format('woff'),
+			url('../fonts/Muller/Bold/MullerBold.ttf') format('truetype');
 	font-weight: 700;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Muller-XBold";
-	src: url("../fonts/Muller/ExtraBold/MullerExtraBold.eot");
-	src: url("../fonts/Muller/ExtraBold/MullerExtraBold.eot?#iefix") format("embedded-opentype"),
-		url("../fonts/Muller/ExtraBold/MullerExtraBold.woff2") format("woff2"),
-		url("../fonts/Muller/ExtraBold/MullerExtraBold.woff") format("woff"),
-		url("../fonts/Muller/ExtraBold/MullerExtraBold.ttf") format("truetype");
+	src: url('../fonts/Muller/ExtraBold/MullerExtraBold.eot');
+	src: url('../fonts/Muller/ExtraBold/MullerExtraBold.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/Muller/ExtraBold/MullerExtraBold.woff2') format('woff2'),
+			url('../fonts/Muller/ExtraBold/MullerExtraBold.woff') format('woff'),
+			url('../fonts/Muller/ExtraBold/MullerExtraBold.ttf') format('truetype');
 	font-weight: 900;
 	font-style: normal;
 }
@@ -40,9 +40,9 @@
 }
 //// Конец шрифтов
 // Переменные
-$main_color: #000b30;
+$main_color: #000B30;
 $text_color: #000000;
-$note_color: #88c4ff;
+$note_color: #88C4FF;
 //// Конец переменных
 // Базовые стили
 body {
@@ -50,15 +50,10 @@ body {
 	font-size: 16px;
 	color: $text-color;
 }
-.container {
-}
 section {
 	padding: 35px 0;
 }
-input,
-button,
-a,
-textarea {
+input, button, a, textarea {
 	&:focus {
 		outline: none;
 	}
@@ -67,7 +62,7 @@ textarea {
 	resize: none;
 }
 //// Конец базовых стилей
-// Услуги
+// Элементы
 .section {
 	&-header {
 		position: relative;
@@ -112,7 +107,7 @@ textarea {
 			font-size: 20px;
 			line-height: 150%;
 		}
-		&:before {
+		&::before {
 			content: "";
 			line-height: 150%;
 			top: 50%;
@@ -140,235 +135,4 @@ textarea {
 		}
 	}
 }
-.research__row {
-	margin-left: -9px;
-	margin-top: 24px;
-	display: flex;
-	flex-wrap: wrap;
-}
-.research__block {
-	transition: all 0.5s ease;
-	&:hover {
-		.research__icon {
-			svg path {
-				stroke: white;
-				stroke-width: 4;
-				stroke-linecap: round;
-				stroke-linejoin: round;
-			}
-		}
-		.research__title {
-			@include xbold;
-			color: white;
-		}
-		.research__text {
-			color: white;
-		}
-
-		background: $main_color;
-	}
-	margin: 3px;
-	width: 32%;
-	height: 254px;
-	background: #ffffff;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-}
-.copy1 {
-}
-.copy4 {
-	margin-left: 204px;
-}
-.research__item {
-}
-.research__item__row {
-	display: flex;
-}
-.research__body {
-	height: 240px;
-}
-.body1 {
-}
-.research__title {
-	transition: all 0.5s ease;
-	padding-top: 11px;
-	padding-left: 21px;
-	@include xbold;
-	text-transform: uppercase;
-}
-.research__text {
-	transition: all 0.5s ease;
-	padding-left: 21px;
-	padding-top: 10px;
-}
-.research__icon {
-	margin-top: 176px;
-	margin-right: 20px;
-}
-.icon1 {
-}
-.icon2 {
-}
-//Услуги
-
-//media
-@media (max-width: 1200px) {
-	.container {
-	}
-
-	span {
-		margin-left: -9px;
-	}
-	.title {
-		margin-left: -8px;
-	}
-	.research__text {
-		@include bold;
-		transition: all 0.5s ease;
-		padding-left: 21px;
-		padding-top: 22px;
-		width: 85.3%;
-	}
-	.research__icon {
-		position: absolute;
-		padding-left: 220px;
-	}
-	.icon2 {
-		padding-top: 5px;
-	}
-	.icon4 {
-		padding-left: 210px;
-	}
-	.icon5 {
-		padding-left: 219px;
-	}
-}
-
-@media (max-width: 992px) {
-	.container {
-	}
-	.slick-list {
-		height: 250px;
-		width: 100%;
-	}
-	.section-header {
-	}
-	.copy4 {
-		margin-left: 4px;
-	}
-	.research__icon {
-		position: absolute;
-		padding-left: 7.45%;
-		margin-top: 2.1%;
-	}
-	.icon5 {
-	}
-	.research__row {
-	}
-	.research__text {
-		width: 100%;
-		font-size: 19px;
-	}
-	.section-number-text {
-		margin-top: 22px;
-	}
-	.section-title_reg {
-		max-width: 60%;
-	}
-	.section-title_bold {
-		padding-left: 10px;
-	}
-	.section-subtitle-text {
-	}
-}
-
-@media (max-width: 576px) {
-	.container {
-	}
-	span {
-		margin-left: 10px;
-	}
-	.title {
-		margin-left: 30px;
-	}
-	.research__block {
-	}
-	.research__icon {
-		padding: 0px 0% 0px 6.6%;
-	}
-	.icon4 {
-		padding-top: 0.23%;
-		padding-left: 6.56%;
-	}
-	.icon2,
-	.icon3 {
-		padding-top: 0.23%;
-		padding-left: 6.9%;
-	}
-	.research__text {
-		width: 87%;
-		line-height: 20px;
-		@include xbold;
-		font-size: 100%;
-		padding-top: 10px;
-	}
-	.research__body {
-		width: 100%;
-	}
-	.research__item__row {
-		flex-wrap: nowrap;
-		height: 250px;
-	}
-
-	.research__block {
-		width: 100%;
-		margin-left: 2px;
-	}
-}
-
-/*@media (min-width: 575.9px) {
-	.container {
-	}
-	span {
-		margin-left: 50px;
-	}
-	.title {
-		margin-left: 60px;
-	}
-	.research__icon {
-		padding: 0px 0% 0px 7.33%;
-	}
-	.research__text {
-		width: 80%;
-		@include xbold;
-		font-size: 20px;
-	}
-	.research__body {
-		width: 100%;
-		height: 700px;
-	}
-	.research__item__row {
-		display: flex;
-		flex-wrap: wrap;
-	}
-	.section-title_reg {
-		max-width: 70%;
-		line-height: 40px;
-		margin-left: 60px;
-	}
-	.section-title_bold {
-		margin-left: -10px;
-	}
-	.section-number-text {
-	}
-	.title__text {
-		margin-top: -20px;
-	}
-
-	.research__block {
-		width: 100%;
-		margin-left: 2px;
-	}
-}
-*/
-//media
 //// Конец элементов
