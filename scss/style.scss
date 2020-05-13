@@ -49,6 +49,7 @@ body {
 	@include regular;
 	font-size: 16px;
 	color: $text-color;
+	overflow-x: hidden;
 }
 section {
 	padding: 35px 0;
@@ -60,6 +61,9 @@ input, button, a, textarea {
 }
 textarea {
 	resize: none;
+}
+.container-fluid {
+	padding: 0;
 }
 //// Конец базовых стилей
 // Элементы
@@ -136,3 +140,14 @@ textarea {
 	}
 }
 //// Конец элементов
+// Главный экран
+.main {
+	// background: #010A27 url('../img/main-bg.jpg') left top no-repeat;
+	// opacity: .3;
+	color: #fff;
+	// background-image: url("../img/main-bg.jpg");
+	background-color: rgba(1, 10, 39, 1);
+	mix-blend-mode: multiply;
+
+}
+//// Конец главного экрана
