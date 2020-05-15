@@ -29,3 +29,4 @@ prepros.config
 
 ### PhpStrom ###
 .idea/*
+*.css
