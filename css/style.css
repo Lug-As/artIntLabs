@@ -206,9 +206,27 @@ textarea {
   }
 }
 @media (max-width: 992px) {
+  .section-subtitle {
+    border: 4px solid #88c4ff;
+    width: 99%;
+    padding: 3% 5% 3% 1%;
+    height: 100%;
+  }
+  .section-subtitle p {
+    text-align: justify;
+  }
+  .section-subtitle:before {
+    content: "";
+    display: none;
+  }
+
+  .section-number-text {
+    margin-top: 22px;
+  }
+
   .slick-list {
-    height: 250px;
-    width: 100%;
+    display: block;
+    height: 260px;
   }
 
   .copy4 {
@@ -225,20 +243,32 @@ textarea {
     width: 100%;
     font-size: 19px;
   }
-
-  .section-number-text {
-    margin-top: 22px;
-  }
-
-  .section-title_reg {
-    max-width: 60%;
-  }
-
-  .section-title_bold {
-    padding-left: 10px;
-  }
 }
 @media (max-width: 576px) {
+  .section-subtitle {
+    border: 4px solid #88c4ff;
+    width: 99%;
+    padding: 3% 5% 3% 1%;
+    height: 100%;
+  }
+  .section-subtitle p {
+    font-size: 15px;
+    text-align: justify;
+  }
+  .section-subtitle:before {
+    content: "";
+    display: none;
+  }
+
+  .section-title {
+    margin-left: 20px;
+    font-size: 18px;
+  }
+  .section-title span {
+    margin-left: -1px;
+    display: flex;
+  }
+
   span {
     margin-left: 10px;
   }
@@ -248,22 +278,22 @@ textarea {
   }
 
   .research__icon {
-    padding: 0px 0% 0px 6.6%;
+    padding: 1% 0% 0px 6.6%;
   }
 
   .icon4 {
-    padding-top: 0.23%;
-    padding-left: 6.56%;
+    padding-top: 1%;
+    padding-left: 6.455%;
   }
 
   .icon2,
 .icon3 {
-    padding-top: 0.23%;
-    padding-left: 6.9%;
+    padding-top: 1%;
+    padding-left: 6.8%;
   }
 
   .research__text {
-    width: 87%;
+    width: 70%;
     line-height: 20px;
     font-family: "Muller-XBold";
     font-size: 100%;
