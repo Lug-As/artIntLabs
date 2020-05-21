@@ -15,6 +15,8 @@ $('.row').slick({
         ,]
 });
 $(window).on('resize', function () {
-    $('.row').slick('refresh');
-
-});
+    $('.row').slick('setPosition');
+    if ($(window).width() < 992) {
+        $('.row').slick('refresh');
+    }
+})
