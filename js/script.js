@@ -1,4 +1,4 @@
-$('.row').slick({
+$('.service__row').slick({
     dots: true,
     dotsClass: 'slick-dots',
     autoplay: true,
@@ -15,6 +15,5 @@ $('.row').slick({
         ,]
 });
 $(window).on('resize', function () {
-    $('.row').slick('refresh');
-
+    $('.service__row').slick('refresh');
 });
