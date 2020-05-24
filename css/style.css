@@ -243,6 +243,7 @@ padding-top: 15px;
 }
 
 .form-input__button{
+    display: block;
     font-family: Muller-Reg;
     font-style: normal;
     font-weight: bold;
@@ -254,13 +255,13 @@ padding-top: 15px;
     margin-top: 48px;
     width: 528px;
     height: 49px;
-    border: 5px solid #1089FF;
-   
+
+
     color: #1089FF;
     background: #FFFFFF;
 
-    border: 10px solid #1089FF;
-    border-radius: 62px;
+    border: 5px solid #1089FF;
+    border-radius: 25px;
 }
 .card__plashka1{
 
@@ -302,6 +303,13 @@ padding-top: 15px;
 }
 
 @media(max-width: 992px) {
+
+
+    .card__plashka1{
+
+        display: none;
+    }
+
     .form-element{
         padding: 20px 0px;
     }
@@ -466,7 +474,7 @@ align-items: left;
 }
 
     .req{
-        overflow: hidden;
+
         padding: 52px 71px;
     }
 .req__right{

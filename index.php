@@ -133,7 +133,7 @@ error_reporting(0);
 									<p class="form-title"><span class="undef-req-r">Получите БЕСПЛАТНЫЙ анализ Вашего маркетинга прямо сейчас!</span> <br> Дадим точный расчет стоимости клика, числа клиентов после начала работы с нами.</p>
 									<p class="form-message"></p>
 									<input name="name" type="text" class="form-input__name" tabindex="0" placeholder="Ваше имя" required>
-									<input name="phone" type="tel" class="form-input__phone" tabindex="0"  placeholder="Ваш телефон" required>
+									<input name="phone" type="phone" class="form-input__phone" tabindex="0"  placeholder="Ваш телефон" required>
 									<input name="email" type="email" class="form-input__email" tabindex="0"  placeholder="Ваш e-mail" required>
 									<input type="submit" class="form-input__button" value="Оставить заявку">
 								</form>
@@ -160,8 +160,9 @@ error_reporting(0);
 	</section>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<script src="js/telega.js" type="text/javascript"></script>
+	<!--<script src="js/telega.js" type="text/javascript"></script>-->
+    <script src="js/email.js" type="text/javascript"></script>
 
-	<script src="js/script.js"></script>
+	<script src="js/email.js" type="text/javascript"></script>
 </body>
 </html>
