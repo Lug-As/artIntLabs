@@ -1,7 +1,7 @@
 <?php
-require ' phpmailer/PHPMailer.php';
-require ' phpmailer/SMTP.php';
-require ' phpmailer/Exception.php';
+require 'phpmailer/PHPMailer.php';
+require 'phpmailer/SMTP.php';
+require 'phpmailer/Exception.php';
 $name = $_POST['name'];
 $phone = $_POST['phone'];
 $email = $_POST['email'];
@@ -15,17 +15,17 @@ try {
 
     // Настройки вашей почты, для gmail
     $mail->Host       = 'smtp.gmail.com'; // SMTP сервера GMAIL
-    $mail->Username   = ''; // Логин на почте
-    $mail->Password   = ''; // Пароль на почте
+    $mail->Username   = 'VASH_LOGIN'; // Логин на почте
+    $mail->Password   = 'VASH_PAROL'; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
-    $mail->setFrom('youremail@gmail.com', 'YOUR NAME'); // Адрес самой почты и имя отправителя
+    $mail->setFrom('VASH_ADRESS', 'NAME'); // Адрес самой почты и имя отправителя
     // для яндекса
    // $mail->Host = ‘smtp.yandex.ru’;
    // $mail->SMTPSecure = ‘ssl’;
    // $mail->Port = 465;
 
-    $mail->addAddress('skal.04@mail.com');// Получатель письма
+    $mail->addAddress('');// Получатель письма
     // $mail->addAddress('youremail@gmail.com');  Ещё один, если нужен
 
     // Прикрипление файлов к письму
