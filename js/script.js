@@ -37,14 +37,14 @@ $(document).ready(function(){
         }
     });
     $('[data-scroll*="#"]').click(function() {
-        let top = $(this.dataset.scroll).offset().top;
-        if (top) {
-            $('html, body').animate({
-                scrollTop: $(this.dataset.scroll).offset().top
-            }, 600);
-        }
+        $('html, body').animate({
+            scrollTop: $(this.dataset.scroll).offset().top
+        }, 600);
         return false;
     });
+    $('.modal-close').click(function () {
+        $('.modal-wrap').fadeOut();
+    })
     $('.research-tab').on('click', function(e) {
         e.preventDefault;
         if (!$(this).hasClass('research-tab_active')) {
