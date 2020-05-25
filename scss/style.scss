@@ -214,7 +214,7 @@ textarea {
 	}
 	&-content {
 		display: inline-block;
-		padding: 117px 0;
+		padding: 104px 0;
 		width: 52%;
 		&-wrap {
 			display: flex;
@@ -688,6 +688,54 @@ textarea {
 	&-section {
 		&-subtitle {
 			width: 79%;
+		}
+	}
+	&-content {
+		// display: flex;
+		// justify-content: space-between;
+		margin: 30px 0;
+		overflow: hidden;
+		&-left {
+			padding-right: 5px;
+		}
+		&-right {
+			padding-left: 5px;
+		}
+		&-top {
+			padding-bottom: 5px;
+		}
+		&-bottom {
+			padding-top: 5px;
+		}
+		&-left, &-right {
+			display: inline-block;
+			width: 50%;
+			overflow: hidden;
+		}
+		&-top, &-bottom {
+			display: inline-flex;
+			width: 100%;
+			overflow: hidden;
+			max-height: 200px;
+		}
+		&-2 {
+			width: 38.5%;
+		}
+		&-3 {
+			width: 61%;
+		}
+		&-img {
+			object-fit: cover;
+			width: 100%;
+			&-1 {
+				max-height: 400px;
+			}
+			&-2 {
+				max-height: 200px;
+			}
+			&-3 {
+				max-height: 200px;
+			}
 		}
 	}
 }
