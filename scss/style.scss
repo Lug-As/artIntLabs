@@ -690,52 +690,74 @@ textarea {
 			width: 79%;
 		}
 	}
-	&-content {
-		// display: flex;
-		// justify-content: space-between;
+	&-para {
+		color: $light_color;
+		font-size: 21px;
+		line-height: 126%;
+		text-align: justify;
+		letter-spacing: 0.05em;
+		&-wrap {
+			display: inline-block;
+			position: absolute;
+			width: 80%;
+			padding: 25px;
+			bottom: 0;
+			right: 0;
+			background-color: transparentize($main_color, .15);
+		}
+	}
+	&-mobile {
+		display: none;
+	}
+	&-desktop {
+		display: flex;
+		justify-content: space-between;
 		margin: 30px 0;
 		overflow: hidden;
-		&-left {
-			padding-right: 5px;
+		&-half {
+			&-hor {
+				position: relative;
+				display: inline-block;
+				width: 49.8%;
+				height: 500px;
+			}
+			&-ver {
+				height: 248px;
+				&:first-child {
+					margin-bottom: 4px;
+				}
+			}
 		}
-		&-right {
-			padding-left: 5px;
-		}
-		&-top {
-			padding-bottom: 5px;
-		}
-		&-bottom {
-			padding-top: 5px;
-		}
-		&-left, &-right {
+		&-thin {
 			display: inline-block;
-			width: 50%;
-			overflow: hidden;
+			height: 100%;
+			width: 40%;
 		}
-		&-top, &-bottom {
-			display: inline-flex;
-			width: 100%;
-			overflow: hidden;
-			max-height: 200px;
+		&-fat {
+			display: inline-block;
+			height: 100%;
+			width: 59%;
 		}
-		&-2 {
-			width: 38.5%;
+	}
+	&-img {
+		overflow: hidden;
+		background-color: #bbb;
+		background-size: cover;
+		background-position: center;
+		&-first {
+			background-image: url("../img/team/team-1.png");
 		}
-		&-3 {
-			width: 61%;
+		&-sec {
+			background-image: url("../img/team/team-2.png");
 		}
-		&-img {
-			object-fit: cover;
-			width: 100%;
-			&-1 {
-				max-height: 400px;
-			}
-			&-2 {
-				max-height: 200px;
-			}
-			&-3 {
-				max-height: 200px;
-			}
+		&-third {
+			background-image: url("../img/team/team-3.png");
+		}
+		&-fourth {
+			background-image: url("../img/team/team-4.png");
+		}
+		&-fifth {
+			background-image: url("../img/team/team-5.png");
 		}
 	}
 }
@@ -913,6 +935,14 @@ textarea {
 	.work__body_fourth {
 		.work__text {
 			padding-top: 60px;
+		}
+	}
+	.team {
+		&-para {
+			font-size: 17px;
+			&-wrap {
+				padding: 20px;
+			}
 		}
 	}
 	.request {
@@ -1161,6 +1191,63 @@ textarea {
 			max-width: 100%;
 		}
 	}
+	.team {
+		&-desktop {
+			display: none;
+		}
+		&-mobile {
+			margin-top: 20px;
+			display: block;
+			&-top {
+				height: 350px;
+				overflow: hidden;
+				margin-bottom: 7px;
+			}
+			&-left {
+				display: inline-block;
+				height: 100%;
+				width: 35%;
+				overflow: hidden;
+				flex-direction: column;
+				margin-right: .6%;
+			}
+			&-right {
+				display: inline-block;
+				height: 100%;
+				width: 64.4%;
+			}
+			&-bleft {
+				display: inline-block;
+				height: 100%;
+				width: 32%;
+			}
+			&-bottom {
+				height: 300px;
+			}
+			&-second, &-third {
+				height: 50%;
+				width: 100%;
+				display: inline-block;
+				&:first-child {
+					margin-bottom: -4px;
+				}
+			}
+			&-para {
+				color: $light_color;
+				font-size: 25px;
+				line-height: 140%;
+				&-wrap {
+					display: inline-block;
+					height: 100%;
+					background-color: $main_color;
+					width: 67.4%;
+					margin-left: .6%;
+					padding: 30px;
+					vertical-align: top;
+				}
+			}
+		}
+	}
 	.request {
 		&-content {
 			flex-direction: column-reverse;
@@ -1230,6 +1317,22 @@ textarea {
 		}
 		&-nav {
 			width: 100%;
+		}
+	}
+	.team {
+		&-mobile {
+			&-top {
+				height: 300px;
+			}
+			&-bottom {
+				height: 250px;
+			}
+			&-para {
+				font-size: 20px;
+				&-wrap {
+					padding: 20px;
+				}
+			}
 		}
 	}
 	.request {
@@ -1381,6 +1484,23 @@ textarea {
 		padding-right: 75px;
 		display: block;
 	}
+	.team {
+		&-mobile {
+			&-top {
+				height: 220px;
+				margin-bottom: 4px;
+			}
+			&-bottom {
+				height: 220px;
+			}
+			&-para {
+				font-size: 16px;
+				&-wrap {
+					padding: 13px 15px;
+				}
+			}
+		}
+	}
 	.request {
 		&-contact {
 			flex-direction: column;
@@ -1417,6 +1537,22 @@ textarea {
 		&-button {
 			font-size: 13px;
 			letter-spacing: 0.1em;
+		}
+	}
+	.team {
+		&-mobile {
+			&-top {
+				height: 200px;
+			}
+			&-bottom {
+				height: 190px;
+			}
+			&-para {
+				font-size: 14px;
+				&-wrap {
+					padding: 10px 9px;
+				}
+			}
 		}
 	}
 	.request {
