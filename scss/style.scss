@@ -1336,6 +1336,11 @@ textarea {
 			width: 100%;
 		}
 	}
+	.service {
+		&__text {
+			padding-right: 90px;
+		}
+	}
 	.team {
 		&-mobile {
 			&-top {
@@ -1429,9 +1434,7 @@ textarea {
 		padding-left: 6.8%;
 	}
 	.service__text {
-		width: 70%;
 		line-height: 20px;
-		@include xbold;
 		font-size: 100%;
 		padding-top: 10px;
 	}
