@@ -41,7 +41,7 @@
 //// Конец шрифтов
 // Переменные
 $main_color: #000B30;
-$main_color_dark: darken($main_color, 4.1);
+$main_color_dark: #01011b;
 $text_color: #000000;
 $note_color: #88C4FF;
 $light_color: #ffffff;
@@ -75,7 +75,13 @@ textarea {
 .container-fluid {
 	padding: 0;
 }
+.slick-active {
+	&:focus {
+		outline: none;
+	}
+}
 //// Конец базовых стилей
+//  Элементы
 .section {
 	&-header {
 		position: relative;
@@ -308,6 +314,9 @@ textarea {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		div {
+			outline: none;
+		}
 	}
 	&__block {
 		transition: all 0.5s ease;
@@ -379,7 +388,7 @@ textarea {
 			cursor: pointer;
 		}
 		&_active, &:hover {
-			background: lighten($main_color, 4);
+			background: $main_color;
 			color: $light_color;
 		}
 		&-wrap {
@@ -402,6 +411,11 @@ textarea {
 			background-color: darken($light_color, 50);
 		}
 	}
+	&-slider {
+		div {
+			outline: none;
+		}
+	}
 	&-slide {
 		position: relative;
 		display: none;
@@ -413,7 +427,6 @@ textarea {
 			display: block;
 		}
 		&-content {
-			position: relative;
 			display: flex;
 		}
 		&-img {
@@ -451,10 +464,13 @@ textarea {
 			}
 		}
 		&-label {
+			position: absolute;
+			bottom: 0;
+			right: 0;
 			margin-top: 20px;
 			display: flex;
 			&-text {
-				width: 210px;
+				width: 200px;
 				display: inline-block;
 				color: $light_color;
 				line-height: 125%;
@@ -467,7 +483,7 @@ textarea {
 		}
 		&-list {
 			position: absolute;
-			top: 0;
+			top: 4px;
 			left: 0;
 			padding: 0;
 			text-align: center;
@@ -488,14 +504,14 @@ textarea {
 	.research-slide-item {
 		font-size: 38px;
 		letter-spacing: .11em;
-		line-height: 138%;		
+		line-height: 137%;		
 	}
 }
 .slide-2 {
 	background-image: url('../img/research/slide-bg-2.png');
 	.research-slide-item {
 		font-size: 30px;
-		line-height: 140%;
+		line-height: 138%;
 		letter-spacing: .02em;
 	}
 }
@@ -507,7 +523,7 @@ textarea {
 		}
 		&-item {
 			font-size: 88px;
-			line-height: 97%;
+			line-height: 96%;
 			letter-spacing: .06em;
 		}
 	}
@@ -694,7 +710,7 @@ textarea {
 		color: $light_color;
 		font-size: 21px;
 		line-height: 126%;
-		text-align: justify;
+		text-align: center;
 		letter-spacing: 0.05em;
 		&-wrap {
 			display: inline-block;
@@ -873,10 +889,10 @@ textarea {
 	}
 	.service {
 		&__text {
-			@include bold;
 			transition: all 0.5s ease;
 			padding-left: 21px;
 			padding-top: 22px;
+			padding-right: 14px;
 			width: 85.3%;
 		}
 		&__icon {
@@ -887,10 +903,10 @@ textarea {
 	.icon2 {
 		padding-top: 5px;
 	}
-	.icon4 {
+	.icon3 {
 		padding-left: 210px;
 	}
-	.icon5 {
+	.icon4 {
 		padding-left: 219px;
 	}
 	.research {
@@ -1036,10 +1052,10 @@ textarea {
 					transition: 0.2s;
 				}
 				span::before {
-					transform: translateY(-7px);
+					transform: translateY(-8px);
 				}
 				span::after {
-					transform: translateY(7px);
+					transform: translateY(6px);
 				}
 				&_active {
 					span {
@@ -1070,9 +1086,6 @@ textarea {
 		display: block;
 		height: 260px;
 	}
-	.copy4 {
-		margin-left: 4px;
-	}
 	.service__icon {
 		position: absolute;
 		padding-left: 7.45%;
@@ -1097,6 +1110,7 @@ textarea {
 			margin-top: 30px;
 			&-content {
 				padding-top: 30px;
+				padding-bottom: 10px;
 				flex-direction: column;
 			}
 			&-img {
@@ -1109,6 +1123,7 @@ textarea {
 			}
 			&-para {
 				margin: 20px 0 30px;
+				padding-top: 10px;
 				&-wrap {
 					width: 100%;
 					margin: 0;
@@ -1119,8 +1134,10 @@ textarea {
 				}
 			}
 			&-label {
+				position: static;
 				display: flex;
 				justify-content: center;
+				margin-top: 0;
 				&-img {
 					height: 50px;
 				}
@@ -1402,12 +1419,12 @@ textarea {
 			}
 		}
 	}
-	.icon4 {
+	.icon3 {
 		padding-top: 1%;
 		padding-left: 6.455%;
 	}
 	.icon2,
-	.icon3 {
+	.icon5 {
 		padding-top: 1%;
 		padding-left: 6.8%;
 	}
