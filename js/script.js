@@ -9,11 +9,34 @@ function ajaxRequest(url, body, onSuccessFunction = false, onErrorFunction = fal
             if (this.status === 200 && onSuccessFunction !== false) {
                 onSuccessFunction(result);
             }
-            if (this.status === 500 && onErrorFunction !== false) {
+            if ((this.status === 500 || this.status === 400) && onErrorFunction !== false) {
                 onErrorFunction(result);
             }
         }
     }
+}
+
+function serializeSelectorsArray(selectorsArray) {
+    let body, key;
+    key = 0;
+    body = "";
+    while(key < selectorsArray.length) {
+        let selector, element, value;
+        selector = selectorsArray[key];
+        element = document.querySelector(selector);
+        value = element.value.trim();
+        if (value === "") {
+            alert("Необходимо заполнить все поля")
+            return false;
+        }
+        if (selector !== selectorsArray[0]) {
+            body += "&";
+        }
+        body += element.name + "=" + value;
+        element.value = "";
+        key++;
+    }
+    return body;
 }
 
 function toggleNavMenu() {
@@ -77,4 +100,15 @@ $(document).ready(function(){
             $(".slide-" + this.dataset.slide).addClass('research-slide_active');
         }
     });
+    let btn;
+    btn = document.getElementById("request-btn");
+    btn.onclick = function(event) {
+        event.preventDefault;
+        let body;
+        body = serializeSelectorsArray(["#user_name", "#user_phone", "#user_email"]);
+        if (body !== false) {
+            ajaxRequest("/mail.php", body, function (result) { console.log(result); }, function (result) { console.log(result); });
+        }
+        return false;
+    }
 });

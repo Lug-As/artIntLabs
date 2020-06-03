@@ -777,12 +777,12 @@
 						<p class="request-form-para bold">Получите БЕСПЛАТНЫЙ анализ вашей задачи прямо сейчас!</p>
 						<p class="request-form-para">Дадим оценку применимости нейронных сетей и рассчитаем полную стоимость разработки.</p>
 					</div>
-					<form class="request-form">
-						<input type="text" class="request-form-input" placeholder="Ваше имя">
-						<input type="text" class="request-form-input" placeholder="Ваш телефон">
-						<input type="text" class="request-form-input" placeholder="Ваш e-mail">
+					<form class="request-form" id="request-form" method="POST" action="mail.php">
+						<input type="text" id="user_name" class="request-form-input" placeholder="Ваше имя" name="name" required>
+						<input type="text" id="user_phone" class="request-form-input" placeholder="Ваш телефон" name="phone" required>
+						<input type="text" id="user_email" class="request-form-input" placeholder="Ваш e-mail" name="email" required>
 						<div class="request-form-btn-border">
-							<button class="request-form-btn">Оставить заявку</button>
+							<button class="request-form-btn" id="request-btn">Оставить заявку</button>
 						</div>
 					</form>
 				</div>
