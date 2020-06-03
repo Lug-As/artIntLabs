@@ -5,7 +5,7 @@ function ajaxRequest(url, body, onSuccessFunction = false, onErrorFunction = fal
     xhr.send(body);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
-            let result = this.responseText;
+            let result = JSON.parse(this.responseText);
             if (this.status === 200 && onSuccessFunction !== false) {
                 onSuccessFunction(result);
             }
@@ -42,6 +42,10 @@ function serializeSelectorsArray(selectorsArray) {
 function toggleNavMenu() {
     $('.main-nav-btn').toggleClass('main-nav-btn_active');
     $('.main-nav').slideToggle(200);
+}
+
+function showModal(result) {
+    $("#modal_wrap").show();
 }
 
 $(document).ready(function(){
@@ -107,7 +111,7 @@ $(document).ready(function(){
         let body;
         body = serializeSelectorsArray(["#user_name", "#user_phone", "#user_email"]);
         if (body !== false) {
-            ajaxRequest("/mail.php", body, function (result) { console.log(result); }, function (result) { console.log(result); });
+            ajaxRequest("/mail.php", body, showModal);
         }
         return false;
     }

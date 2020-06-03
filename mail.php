@@ -4,12 +4,12 @@ require 'mailer/PHPMailer.php';
 require 'mailer/SMTP.php';
 require 'mailer/Exception.php';
 
-// Переменные, которые отправляет пользователь
 if (!isset($_POST['name']) or !isset($_POST['phone']) or !isset($_POST['email'])) {
     http_response_code(400);
     die;
 }
 
+// Переменные, которые отправляет пользователь
 $name = trim($_POST['name']);
 $phone = trim($_POST['phone']);
 $email = trim($_POST['email']);
@@ -36,18 +36,22 @@ try {
 	$mail->setFrom('mailer.tyoma@mail.ru', 'Request Mailer'); // Адрес самой почты и имя отправителя
 
 	// Получатель письма
-	$mail->addAddress('skaliushartem@gmail.com');  
+	$mail->addAddress('skaliushartem@gmail.com'); // sergey-artlab@yandex.ru
 
 	$mail->isHTML(true);
 
-	$mail->Subject = 'Заголовок письма';
-	$mail->Body    = "<b>Имя:</b> $name<br>
+	$mail->Subject = 'Новая заявка';
+	$mail->Body = "<b>Имя:</b> $name<br>
 	<b>Почта:</b> $email<br>
 	<b>Номер:</b> $phone";
 
-	// Проверяем отравленность сообщения
-	echo $msg;
-
+	$mail->send();
+	$result = "success";
+	$status = "Cообщение было успешно отправлено.";
 } catch (Exception $e) {
-	echo "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
+	$result = "error";
+    $status = "Сообщение не было отправлено.";
+    http_response_code(500);
 }
+
+echo json_encode(["result" => $result, "status" => $status]);
