@@ -36,7 +36,7 @@ try {
 	$mail->setFrom('mailer.tyoma@mail.ru', 'Request Mailer'); // Адрес самой почты и имя отправителя
 
 	// Получатель письма
-	$mail->addAddress('skaliushartem@gmail.com'); // sergey-artlab@yandex.ru
+	$mail->addAddress('sergey-artlab@yandex.ru');
 
 	$mail->isHTML(true);
 
