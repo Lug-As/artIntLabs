@@ -61,6 +61,13 @@ body {
 section {
 	padding: 35px 0;
 }
+a {
+	transition: color .3s;
+	color: inherit;
+	&:hover {
+		text-decoration: none;
+	}
+}
 input,
 button,
 a,
@@ -814,10 +821,8 @@ textarea {
 		p {
 			text-align: center;
 			letter-spacing: 0.075em;
-			text-transform: uppercase;
-			color: white;
-			line-height: 99.76%;
-			@include regular;
+			color: $light_color;
+			line-height: 99.7%;
 			font-size: 12px;
 		}
 	}
