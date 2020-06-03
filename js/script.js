@@ -1,3 +1,26 @@
+function ajaxRequest(url, body, onSuccessFunction = false, onErrorFunction = false) {
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send(body);
+    xhr.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            let result = this.responseText;
+            if (this.status === 200 && onSuccessFunction !== false) {
+                onSuccessFunction(result);
+            }
+            if (this.status === 500 && onErrorFunction !== false) {
+                onErrorFunction(result);
+            }
+        }
+    }
+}
+
+function toggleNavMenu() {
+    $('.main-nav-btn').toggleClass('main-nav-btn_active');
+    $('.main-nav').slideToggle(200);
+}
+
 $(document).ready(function(){
     let properties, researchSlider, serviceSlider;
     researchSlider = $('.research-slider');
@@ -55,8 +78,3 @@ $(document).ready(function(){
         }
     });
 });
-
-function toggleNavMenu() {
-    $('.main-nav-btn').toggleClass('main-nav-btn_active');
-    $('.main-nav').slideToggle(200);
-}
