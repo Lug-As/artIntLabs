@@ -608,7 +608,7 @@ textarea {
 		color: $text_color;
 		&-wrap {
 			display: inline-block;
-			padding: 55px 45px;
+			padding: 40px 35px 45px;
 			width: 55%;
 			text-align: center;
 			background-color: $main_color;
@@ -617,9 +617,9 @@ textarea {
 			background-repeat: no-repeat;
 		}
 		&-para {
-			font-size: 24px;
-			line-height: 125%;
-			letter-spacing: 0.05em;
+			font-size: 20px;
+			line-height: 130%;
+			letter-spacing: 0.02em;
 			color: $light_color;
 		}
 		&-img {
@@ -954,6 +954,9 @@ textarea {
 		}
 	}
 	.team {
+		&-section-subtitle {
+			width: 93%;
+		}
 		&-para {
 			font-size: 17px;
 			&-wrap {
@@ -963,9 +966,13 @@ textarea {
 	}
 	.request {
 		&-contact {
+			&-para {
+				font-size: 18px;
+				letter-spacing: 0.03em;
+			} 
 			&-wrap {
 				width: 53%;
-				padding: 45px;
+				padding: 35px 45px;
 			}
 		}
 		&-form {
