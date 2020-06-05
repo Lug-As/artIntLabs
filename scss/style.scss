@@ -227,8 +227,8 @@ textarea {
 	}
 	&-content {
 		display: inline-block;
-		padding: 104px 0;
-		width: 52%;
+		padding: 104px 30px 104px 0;
+		width: 55%;
 		&-wrap {
 			display: flex;
 		}
@@ -244,7 +244,7 @@ textarea {
 		&-label {
 			position: relative;
 			left: 187px;
-			font-size: 18px;
+			font-size: 13px;
 			letter-spacing: 0.055em;
 			text-transform: uppercase;
 		}
@@ -895,6 +895,8 @@ textarea {
 			font-size: 72px;
 			&-label {
 				left: 156px;
+				font-size: 12px;
+				letter-spacing: 0.045em;
 			}
 			&-square {
 				height: 22px;
@@ -1046,15 +1048,16 @@ textarea {
 		&-content {
 			width: 100%;
 			text-align: center;
+			padding-right: 0;
 		}
 		&-title {
 			&-square {
 				height: 21px;
 				width: 21px;
-				left: 70.5px;
+				left: 87px;
 			}
 			&-label {
-				left: 75px;
+				left: 91px;
 			}
 		}
 		&-video-wrap {
@@ -1363,10 +1366,10 @@ textarea {
 		&-title {
 			font-size: 75px;
 			&-square {
-				left: 67.5px;
+				left: 84px;
 			}
 			&-label {
-				left: 73px;
+				left: 90px;
 			}
 		}
 		&-nav {
@@ -1414,13 +1417,14 @@ textarea {
 		&-title {
 			font-size: 60px;
 			&-square {
-				width: 17px;
-				height: 17px;
-				left: 36px;
+				width: 16px;
+				height: 16px;
+				left: 69px;
 			}
 			&-label {
-				left: 39px;
-				font-size: 12px;
+				left: 74px;
+				font-size: 10px;
+				letter-spacing: 0.025em;
 			}
 		}
 		&-para {
@@ -1581,13 +1585,15 @@ textarea {
 		&-title {
 			font-size: 42px;
 			&-square {
-				height: 12px;
-				width: 12px;
-				left: 31px;
+				height: 9px;
+				width: 9px;
+				left: 23px;
+				border-radius: 0;
+				transform: rotate(45deg);
 			}
 			&-label {
 				top: 3px;
-				left: 33px;
+				left: 23px;
 				font-size: 9px;
 			}
 		}
