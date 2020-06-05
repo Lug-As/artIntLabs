@@ -748,6 +748,7 @@ textarea {
 			background-color: transparent;
 			border-bottom: 2px solid $text_color;
 			font-size: 20px;
+			transition: all .3s;
 		}
 		&-btn {
 			padding: 10px 0;

@@ -104,6 +104,12 @@ $(document).ready(function(){
             $(".slide-" + this.dataset.slide).addClass('research-slide_active');
         }
     });
+    $(".request-form-input").on('focus', function() {
+        this.style.borderColor = "#228CF4";
+    });
+    $(".request-form-input").on('focusout', function() {
+        this.style.borderColor = "#000000";
+    });
     let btn;
     btn = document.getElementById("request-btn");
     btn.onclick = function(event) {
