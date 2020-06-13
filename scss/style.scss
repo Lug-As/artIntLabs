@@ -41,7 +41,7 @@
 //// Конец шрифтов
 // Переменные
 $main_color: #000B30;
-$main_color_dark: #01011b;
+$main_color_dark: #010119;
 $text_color: #000000;
 $note_color: #88C4FF;
 $light_color: #ffffff;
@@ -229,6 +229,7 @@ textarea {
 		display: inline-block;
 		padding: 104px 30px 104px 0;
 		width: 55%;
+		z-index: 2;
 		&-wrap {
 			display: flex;
 		}
@@ -299,11 +300,12 @@ textarea {
 		position: relative;
 		top: 0;
 		height: 100%;
+		right: 290px;
 		&-block {
 			position: absolute;
 			top: 0;
 			height: 100%;
-			overflow: hidden;
+			z-index: 1;
 		}
 		&-wrap {
 			position: relative;
