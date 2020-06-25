@@ -21,7 +21,6 @@ if ($name === "" or $phone === "" or $email === "") {
 
 $mail = new PHPMailer\PHPMailer\PHPMailer();
 try {
-	$msg = "Сообщение успешно отправлено.";
 	$mail->setLanguage('ru', 'mailer/language/');
 	$mail->isSMTP();   
 	$mail->CharSet = "UTF-8";
