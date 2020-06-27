@@ -117,7 +117,7 @@ $(document).ready(function(){
         let body;
         body = serializeSelectorsArray(["#user_name", "#user_phone", "#user_email"]);
         if (body !== false) {
-            ajaxRequest("/mail.php", body, showModal);
+            ajaxRequest("/telegram.php", body, showModal);
         }
         return false;
     }
