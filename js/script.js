@@ -5,7 +5,7 @@ function ajaxRequest(url, body, onSuccessFunction = false, onErrorFunction = fal
     xhr.send(body);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
-            let result = JSON.parse(this.responseText);
+            let result = this.responseText;
             if (this.status === 200 && onSuccessFunction !== false) {
                 onSuccessFunction(result);
             }
