@@ -491,6 +491,9 @@ textarea {
 			left: 0;
 			padding: 0;
 			text-align: center;
+			&_mob {
+				display: none;
+			}
 		}
 		&-item {
 			@include xbold;
@@ -1234,7 +1237,37 @@ textarea {
 			}
 			&-list {
 				display: none;
+				&-wrap {
+					position: absolute;
+					display: flex;
+					width: 100%;
+				}
+				&_mob {
+					position: relative;
+					display: inline-block;
+					width: 50%;
+					opacity: .45;
+				}
 			}
+		}
+	}
+	.slide-1 .research-slide-item {
+		font-size: 30px;
+		letter-spacing: 0.07em;
+		line-height: 120%;
+	}
+	.slide-2 {
+		.research-slide-item {
+			font-size: 24px;
+			line-height: 140%;
+			letter-spacing: 0.06em;
+		}
+	}
+	.slide-3 {
+		.research-slide-item {
+			font-size: 50px;
+			line-height: 125%;
+			letter-spacing: 0.08em;
 		}
 	}
 	.work {
@@ -1414,6 +1447,7 @@ textarea {
 				max-height: 80%;
 				max-width: 85%;
 				&-square {
+					margin-top: 10px;
 					position: relative;
 					height: 230px;
 					width: 230px;
@@ -1430,6 +1464,24 @@ textarea {
 					height: 35px;
 				}
 			}
+		}
+	}
+	.slide-1 .research-slide-item {
+		font-size: 24px;
+		letter-spacing: 0.09em;
+		line-height: 130%;
+	}
+	.slide-2 {
+		.research-slide-item {
+			font-size: 18px;
+			line-height: 160%;
+			letter-spacing: 0.08em;
+		}
+	}
+	.slide-3 {
+		.research-slide-item {
+			font-size: 43px;
+			line-height: 120%;
 		}
 	}
 	.work {
@@ -1555,6 +1607,24 @@ textarea {
 			}
 		}
 	}
+	.slide-1 .research-slide-item {
+		font-size: 21px;
+		letter-spacing: 0.10em;
+		line-height: 150%;
+	}
+	.slide-2 {
+		.research-slide-item {
+			font-size: 16px;
+			line-height: 170%;
+			letter-spacing: 0;
+		}
+	}
+	.slide-3 {
+		.research-slide-item {
+			font-size: 40px;
+			line-height: 125%;
+		}
+	}
 	.icon3 {
 		padding-top: 1%;
 		padding-left: 6.455%;
@@ -1639,6 +1709,29 @@ textarea {
 		&-button {
 			font-size: 13px;
 			letter-spacing: 0.1em;
+		}
+	}
+	.slide-1 .research-slide-item {
+		font-size: 16px;
+		letter-spacing: 0.06em;
+		line-height: 195%;
+	}
+	.slide-2 {
+		.research-slide-item {
+			font-size: 12px;
+			line-height: 230%;
+		}
+	}
+	.slide-3 {
+		.research-slide-item {
+			font-size: 33px;
+			line-height: 155%;
+			letter-spacing: 0.05em;
+		}
+	}
+	.work {
+		&-slide-img-square {
+			margin-top: 0;
 		}
 	}
 	.work {
