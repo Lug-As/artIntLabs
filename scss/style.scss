@@ -56,8 +56,6 @@ body {
 	background: transparent url('../img/main-background.png') left top repeat;
 	background-size: 180%;
 }
-.container {
-}
 section {
 	padding: 35px 0;
 }
@@ -1140,7 +1138,7 @@ textarea {
 					color: $text_color;
 				}
 			}
-			&:nth-child(even) {
+			&_bl {
 				background: $main_color;
 				.service__icon {
 					svg path {
