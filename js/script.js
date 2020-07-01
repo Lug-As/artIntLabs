@@ -33,7 +33,6 @@ $(document).ready(function(){
         dots: true,
         dotsClass: 'slick-dots',
         autoplay: true,
-        autoplaySpeed: 4000,
         arrows: false,
         pauseOnFocus: true,
         mobileFirst: true,
@@ -45,8 +44,14 @@ $(document).ready(function(){
         },
         ]
     };
-    serviceSlider.slick(properties);
-    researchSlider.slick(properties);
+    serviceSlider.slick({
+        autoplaySpeed: 6000,
+        ...properties
+    });
+    researchSlider.slick({
+        autoplaySpeed: 10000,
+        ...properties
+    });
     $(window).on('resize', function () {
         if ($(window).width() < 992) {
             serviceSlider.slick('refresh');

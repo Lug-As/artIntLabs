@@ -317,7 +317,6 @@ textarea {
 // Услуги
 .service {
 	&__row {
-		margin-left: -9px;
 		margin-top: 24px;
 		margin-right: -15px;
 		display: flex;
@@ -332,18 +331,14 @@ textarea {
 		&:hover {
 			.service__icon {
 				svg path {
-					stroke: white;
-					stroke-width: 4;
-					stroke-linecap: round;
-					stroke-linejoin: round;
+					stroke: $light_color;
 				}
 			}
 			.service__title {
-				@include xbold;
-				color: white;
+				color: $light_color;
 			}
 			.service__text {
-				color: white;
+				color: $light_color;
 			}
 			background: $main_color;
 		}
@@ -544,13 +539,10 @@ textarea {
 		width: 75%;
 	}
 	&__body {
-		circle {
-			transition: all 0.3s ease;
-		}
+		display: flex;
+		height: 140px;
+		padding-left: 30px;
 		transition: all 0.5s ease;
-		.work__circle {
-			padding: 40px 34px 0px 0px;
-		}
 		&:hover {
 			circle {
 				stroke: #000b30;
@@ -561,10 +553,9 @@ textarea {
 			border-radius: 40px;
 			background-color: $light_color;
 		}
-
-		padding-left: 30px;
-		display: flex;
-		height: 140px;
+		circle {
+			transition: all 0.3s ease;
+		}
 		&_first {
 			p {
 				max-width: 400px;
@@ -585,6 +576,9 @@ textarea {
 				max-width: 580px;
 			}
 		}
+	}
+	&__circle {
+		padding: 40px 34px 0px 0px;
 	}
 	&__text {
 		flex: 1 1 100%;
@@ -854,7 +848,7 @@ textarea {
 		position: fixed;
 		top: 0;
 		left: 0;
-		height: 100%;
+		height: 200%;
 		width: 100%;
 		background-color: rgba(0, 0, 0, .5);
 	}
@@ -1127,18 +1121,64 @@ textarea {
 			}
 		}
 	}
+	.service {
+		&__block {
+			&:hover {
+				background-color: $light_color;
+				.service__icon {
+					svg path {
+						stroke: $text_color;
+					}
+				}
+				.service__title {
+					color: $text_color;
+				}
+				.service__text {
+					color: $text_color;
+				}
+			}
+			&:nth-child(even) {
+				background: $main_color;
+				.service__icon {
+					svg path {
+						stroke: $light_color;
+					}
+				}
+				.service__title {
+					color: $light_color;
+				}
+				.service__text {
+					color: $light_color;
+				}
+				&:hover {
+					background: $main_color;
+					.service__icon {
+						svg path {
+							stroke: $light_color;
+						}
+					}
+					.service__title {
+						color: $light_color;
+					}
+					.service__text {
+						color: $light_color;
+					}
+				}
+			}
+		}
+		&__icon {
+			position: absolute;
+			padding-left: 7.45%;
+			margin-top: 1.8%;
+		}
+		&__text {
+			width: 100%;
+			font-size: 19px;
+		}
+	}
 	.slick-list {
 		display: block;
 		height: 260px;
-	}
-	.service__icon {
-		position: absolute;
-		padding-left: 7.45%;
-		margin-top: 2.1%;
-	}
-	.service__text {
-		width: 100%;
-		font-size: 19px;
 	}
 	.main-svg {
 		display: none;
@@ -1169,6 +1209,7 @@ textarea {
 			&-para {
 				margin: 20px 0 30px;
 				padding-top: 10px;
+				font-size: 20px;
 				&-wrap {
 					width: 100%;
 					margin: 0;
@@ -1184,11 +1225,11 @@ textarea {
 				justify-content: center;
 				margin-top: 0;
 				&-img {
-					height: 50px;
+					height: 40px;
 				}
 				&-text {
 					width: 220px;
-					font-size: 18px;
+					font-size: 16px;
 				}
 			}
 			&-list {
@@ -1196,61 +1237,45 @@ textarea {
 			}
 		}
 	}
-	.work__body {
-		.work__circle {
-			padding: 10px 0px 0px 0px;
-		}
-		&:hover {
-			circle {
-				fill: white;
-				transition: all 0s ease;
-			}
-			background: $main_color;
-			border-radius: 500px;
-			box-shadow: 0px 0px 15px #1089ff;
-			border-radius: 40px;
-			color: white;
-			.work__icon {
-				filter: brightness(0) invert(1);
-			}
-		}
-		margin-top: 40px;
-		box-shadow: 0px 0px 20px #002296;
-		border-radius: 25px;
-		max-width: 100%;
-		height: 100%;
-	}
-	.work__body_first {
-		.work__circle {
-			margin-top: 6px;
-		}
-		.work__text {
-			padding-top: 50px;
-		}
-		.mobile-svg {
-			padding-right: 75px;
-			margin-left: 10px;
-		}
-	}
-	.work__body_second {
-		.work__circle {
-			margin-top: -6px;
-		}
-	}
-	.work__icon {
-		margin-right: 15px;
-	}
-	.work__body_fifth {
-		.work__text {
-			padding: 24px 0px;
-		}
-	}
 	.work {
 		margin: 0px 0px;
 		&__text {
 			padding: 33px 0px;
-			padding-left: -30px;
 			max-width: 100%;
+			font-size: 17px;
+		}
+		&__body {
+			background-color: $light_color;
+			margin-top: 40px;
+			box-shadow: 0px 0px 20px #002296;
+			border-radius: 25px;
+			max-width: 100%;
+			height: 100%;
+			&:hover {
+				box-shadow: 0px 0px 15px #1089ff;
+				border-radius: 25px;
+			}
+			&_first {
+				.work__circle {
+					margin-top: 6px;
+				}
+				.work__text {
+					padding-top: 50px;
+				}
+			}
+			&_second {
+				.work__circle {
+					margin-top: -6px;
+				}
+			}
+			&_fifth {
+			}
+		}
+		&__circle {
+			padding: 40px 20px 0px 0px;
+		}
+		&__icon {
+			margin-right: 15px;
 		}
 	}
 	.team {
@@ -1383,6 +1408,44 @@ textarea {
 			padding-right: 90px;
 		}
 	}
+	.research {
+		&-slide {
+			&-img {
+				max-height: 80%;
+				max-width: 85%;
+				&-square {
+					position: relative;
+					height: 230px;
+					width: 230px;
+				}
+			}
+			&-para {
+				font-size: 18px;
+			}
+			&-label {
+				&-text {
+					font-size: 15px;
+				}
+				&-img {
+					height: 35px;
+				}
+			}
+		}
+	}
+	.work {
+		&__body {
+			padding: 0 20px;
+		}
+		&__text {
+			font-size: 16px;
+		}
+		&__icon {
+			display: none;
+		}
+		&__circle {
+			padding: 40px 15px 0px 0px;
+		}
+	}
 	.team {
 		&-mobile {
 			&-top {
@@ -1415,6 +1478,25 @@ textarea {
 }
 /* Extra small col- */
 @media (max-width: 575.9px) {
+	.section {
+		&-subtitle {
+			p {
+				font-size: 15px;
+				text-align: left;
+			}
+			border: 4px solid $note_color;
+			width: 99%;
+			padding: 3% 5% 3% 1%;
+			height: 100%;
+			&:before {
+				content: "";
+				display: none;
+			}
+		}
+		&-title {
+			font-size: 19px;
+		}
+	}
 	.main {
 		&-title {
 			font-size: 60px;
@@ -1431,32 +1513,32 @@ textarea {
 		}
 		&-para {
 			font-size: 16px;
+			text-align: left;
 		}
 		&-button {
 			font-size: 16px;
 		}
 	}
-	.section {
-		&-subtitle {
-			p {
-				font-size: 15px;
-				text-align: justify;
-			}
-			border: 4px solid $note_color;
-			width: 99%;
-			padding: 3% 5% 3% 1%;
-			height: 100%;
-			&:before {
-				content: "";
-				display: none;
-			}
+	.service {
+		&__icon {
+			padding: 1% 0% 0px 6.6%;
 		}
-		&-title {
-			font-size: 19px;
+		&__text {
+			line-height: 20px;
+			font-size: 100%;
+			padding-top: 10px;
 		}
-	}
-	.service__icon {
-		padding: 1% 0% 0px 6.6%;
+		&__body {
+			width: 100%;
+		}
+		&__item__row {
+			flex-wrap: nowrap;
+			height: 250px;
+		}
+		&__block {
+			width: 100%;
+			margin-left: 2px;
+		}
 	}
 	.research {
 		&-slide {
@@ -1469,7 +1551,7 @@ textarea {
 				}
 			}
 			&-para {
-				font-size: 16px;
+				font-size: 15px;
 			}
 		}
 	}
@@ -1482,76 +1564,25 @@ textarea {
 		padding-top: 1%;
 		padding-left: 6.8%;
 	}
-	.service__text {
-		line-height: 20px;
-		font-size: 100%;
-		padding-top: 10px;
-	}
-	.service__body {
-		width: 100%;
-	}
-	.service__item__row {
-		flex-wrap: nowrap;
-		height: 250px;
-	}
-	.service__block {
-		width: 100%;
-		margin-left: 2px;
-	}
-	.work__body {
-		.work__circle {
-			padding: 10px 0px 0px 0px;
+	.work {
+		&__circle {
+		    padding: 20px 10px 0 0;
 		}
-		&:hover {
-			circle {
-				stroke: #000b30;
-			}
-			border-radius: 500px;
-			box-shadow: 0px 0px 15px #1089ff;
-			border-radius: 40px;
+		&__text {
+			margin-top: 0;
+			padding: 35px 0 20px;
+			max-width: 80%;
 		}
-		margin-top: 40px;
-		box-shadow: 0px 0px 20px #002296;
-		border-radius: 25px;
-		max-width: 100%;
-		height: 100%;
-	}
-	.work__body_first {
-		.work__text {
-			margin-top: -15px;
+		&__body_first .work__text {
+		    padding-top: 35px;
 		}
-		.mobile-svg {
-			padding-right: 85px;
-			margin-left: -20px;
+		&__body_fourth .work__text {
+		    padding-top: 45px;
 		}
-	}
-	.work__body_fourth {
-		.work__text {
-			margin-top: -22px;
-		}
-		.mobile-svg {
-			margin-top: -20px;
-		}
-	}
-	.work__body_fifth {
-		.work__text {
-			padding: 20px 0px;
-		}
-	}
-	.work__text {
-		margin-top: 10px;
-		padding: 20px 2px;
-		max-width: 80%;
-	}
-	.work__icon {
-		display: none;
 	}
 	.mobile-svg {
-		margin-right: -65px;
-		margin-left: -20px;
-		padding-top: 10px;
-		padding-right: 75px;
-		display: block;
+		padding-top: 15px;
+		margin-right: 10px;
 	}
 	.team {
 		&-mobile {
@@ -1609,6 +1640,17 @@ textarea {
 			font-size: 13px;
 			letter-spacing: 0.1em;
 		}
+	}
+	.work {
+		&__body {
+			padding-left: 10px;
+		}
+		&__text {
+			font-size: 14px;
+		}
+	}
+	.mobile-svg {
+		margin-right: 0;
 	}
 	.team {
 		&-mobile {
