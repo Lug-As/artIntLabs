@@ -1,4 +1,4 @@
-function ajaxRequest(url, body, onSuccessFunction = false, onErrorFunction = false) {
+function ajaxRequest(url, body, onSuccessFunction = false) {
     let xhr = new XMLHttpRequest();
     xhr.open('POST', url, true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -10,7 +10,7 @@ function ajaxRequest(url, body, onSuccessFunction = false, onErrorFunction = fal
                 onSuccessFunction(result);
             }
             if ((this.status === 500 || this.status === 400) && onErrorFunction !== false) {
-                onErrorFunction(result);
+                alert('Произошла ошибка. Повторите попытку позже.');
             }
         }
     }
