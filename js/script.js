@@ -1,4 +1,4 @@
-function ajaxRequest(url, body, onSuccessFunction = false) {
+function ajaxRequest(url, body, onSuccessFunction = false, onErrorFunction = false) {
     let xhr = new XMLHttpRequest();
     xhr.open('POST', url, true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -10,10 +10,33 @@ function ajaxRequest(url, body, onSuccessFunction = false) {
                 onSuccessFunction(result);
             }
             if ((this.status === 500 || this.status === 400) && onErrorFunction !== false) {
-                alert("Произошла ошибка. Повторите попытку позже.")
+                onErrorFunction(result);
             }
         }
     }
+}
+
+function serializeSelectorsArray(selectorsArray) {
+    let body, key;
+    key = 0;
+    body = "";
+    while(key < selectorsArray.length) {
+        let selector, element, value;
+        selector = selectorsArray[key];
+        element = document.querySelector(selector);
+        value = element.value.trim();
+        if (value === "") {
+            alert("Необходимо заполнить все поля")
+            return false;
+        }
+        if (selector !== selectorsArray[0]) {
+            body += "&";
+        }
+        body += element.name + "=" + value;
+        element.value = "";
+        key++;
+    }
+    return body;
 }
 
 function toggleNavMenu() {
@@ -96,18 +119,10 @@ $(document).ready(function(){
     btn = document.getElementById("request-btn");
     btn.onclick = function(event) {
         event.preventDefault;
-        let body, token, chat_id, name, phone, email, txt;
-        name = $("#user_name").val();
-        phone = $("#user_phone").val();
-        email = $("#user_email").val();
-        token = "1346558055:AAEBKuGyrpW7JqF_tnqJQ3uJgBTa5ulnDAA";
-        chat_id = "-272810377";
-        txt = `<b>Имя пользователя: </b>${name}%0A`;
-        txt += `<b>Телефон: </b>${phone}%0A`;
-        txt += `<b>E-mail: </b>${email}%0A`;
-        body = `parse_mode=html&text=${txt}`;
+        let body;
+        body = serializeSelectorsArray(["#user_name", "#user_phone", "#user_email"]);
         if (body !== false) {
-            ajaxRequest(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}`, body, showModal);
+            ajaxRequest("/telegram.php", body, showModal);
         }
         return false;
     }
