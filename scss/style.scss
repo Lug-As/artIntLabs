@@ -656,6 +656,7 @@ textarea {
 		background-color: #bbb;
 		background-size: cover;
 		background-position: center;
+		background-repeat: no-repeat;
 		&-first {
 			background-image: url("../img/team/team-1.png");
 		}
@@ -669,7 +670,7 @@ textarea {
 			background-image: url("../img/team/team-4.png");
 		}
 		&-fifth {
-			background-image: url("../img/team/team-5.png");
+			background-image: url("../img/team/team-5.jpg");
 		}
 	}
 }
@@ -1310,6 +1311,11 @@ textarea {
 		}
 	}
 	.team {
+		&-img {
+			&-sec {
+				background-position: top -10px center;
+			}
+		}
 		&-desktop {
 			display: none;
 		}
@@ -1317,7 +1323,7 @@ textarea {
 			margin-top: 20px;
 			display: block;
 			&-top {
-				height: 350px;
+				height: 400px;
 				overflow: hidden;
 				margin-bottom: 7px;
 			}
