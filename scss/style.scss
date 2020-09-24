@@ -633,17 +633,37 @@ textarea {
 // Project
 .project {
   &-box {
-	padding: 50px 30px 40px;
 	text-align: center;
-	background: $light_color;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+	background-image: url('../img/project/project-bg.png');
 
 	&.slick-slide {
 	  margin: 10px;
 	}
 
+	&-inner {
+	  padding: 50px 30px 40px;
+	  background-color: $light_color;
+	  transition: background-color .3s;
+
+	  &:hover {
+		background-color: transparent;
+		color: $light_color;
+
+		.project-box-btn {
+		  color: $light_color;
+		  border-color: $light_color;
+
+		  &:hover {
+			background-color: $light_color;
+			color: $main_color;
+		  }
+		}
+	  }
+	}
+
 	&-btn {
-	  border: 5px solid #000B30;
+	  border: 5px solid $main_color;
 	  border-radius: 25px;
 	  background-color: transparent;
 	  @include bold;
@@ -653,6 +673,7 @@ textarea {
 	  letter-spacing: 0.1em;
 	  text-transform: uppercase;
 	  padding: 8px 28px 4px;
+	  transition: all .3s;
 	}
 
 	&-title {
@@ -662,6 +683,11 @@ textarea {
 	  text-align: center;
 	  letter-spacing: 0.1em;
 	  text-transform: uppercase;
+	  transition: all .3s;
+	}
+
+	&-text {
+	  transition: all .3s;
 	}
 
 	&-img {
