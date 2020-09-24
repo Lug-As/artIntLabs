@@ -1293,6 +1293,7 @@ textarea {
 	  width: 99%;
 	  padding: 3% 5% 3% 1%;
 	  height: 100%;
+	  background-color: rgba(255, 255, 255, .8);
 
 	  &:before {
 		display: none;
@@ -1462,10 +1463,6 @@ textarea {
 	  font-size: 19px;
 	}
   }
-  .slick-list {
-	display: block;
-	height: 260px;
-  }
   .main-svg {
 	display: none;
   }
@@ -1564,6 +1561,25 @@ textarea {
 	  font-size: 50px;
 	  line-height: 125%;
 	  letter-spacing: 0.08em;
+	}
+  }
+  .project {
+	&-box {
+	  &-inner {
+		background-color: transparent;
+		color: $light_color;
+	  }
+
+	  &-btn {
+		color: $light_color;
+		border-color: $light_color;
+		font-size: 17px;
+
+		&:hover {
+		  background-color: $light_color;
+		  color: $main_color;
+		}
+	  }
 	}
   }
   .work {
@@ -1991,6 +2007,30 @@ textarea {
 	padding-top: 1%;
 	padding-left: 6.8%;
   }
+  .project {
+	&-box {
+	  &-inner {
+		padding-left: 25px;
+		padding-right: 25px;
+	  }
+
+	  &-title {
+		font-size: 20px;
+	  }
+
+	  &-text {
+		font-size: 15px;
+	  }
+
+	  &-btn {
+		font-size: 16px;
+	  }
+
+	  &-img {
+		max-height: 135px;
+	  }
+	}
+  }
   .work {
 	&__circle {
 	  padding: 20px 10px 0 0;
@@ -2098,12 +2138,19 @@ textarea {
 	  letter-spacing: 0.05em;
 	}
   }
+  .project {
+	&-box {
+	  &-inner {
+		padding-left: 10px;
+		padding-right: 10px;
+	  }
+	}
+  }
   .work {
 	&-slide-img-square {
 	  margin-top: 0;
 	}
-  }
-  .work {
+
 	&__body {
 	  padding-left: 10px;
 	}

@@ -85,6 +85,22 @@ $(document).ready(function () {
         autoplay: true,
         arrows: false,
         autoplaySpeed: 10000,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ]
     });
     $(window).on('resize', function () {
         if ($(window).width() < 992) {
