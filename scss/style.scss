@@ -1272,6 +1272,20 @@ textarea {
   }
 }
 
+#lz-close {
+  top: 5%;
+  right: 4%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  width: 25px;
+  height: 25px;
+  opacity: 0.8;
+  -webkit-transition: opacity .2s;
+  -o-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
 //// Modal
 // Медиа запросы
 /* Large col-lg- */
