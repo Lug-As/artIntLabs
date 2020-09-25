@@ -830,7 +830,14 @@ textarea {
 	  text-align: center;
 	  letter-spacing: 0.1em;
 	  text-transform: uppercase;
-	  transition: all .3s;
+	}
+
+	&-link {
+	  transition: color .3s;
+	  
+	  &:hover {
+		color: darken($note_color, 12);
+	  }
 	}
 
 	&-text {
