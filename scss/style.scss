@@ -33,15 +33,15 @@
 }
 
 @mixin regular {
-  font-family: "Muller-Reg";
+  font-family: "Muller-Reg", sans-serif;
 }
 
 @mixin bold {
-  font-family: "Muller-Bold";
+  font-family: "Muller-Bold", sans-serif;
 }
 
 @mixin xbold {
-  font-family: "Muller-XBold";
+  font-family: "Muller-XBold", sans-serif;
 }
 
 //// Конец шрифтов
@@ -129,6 +129,12 @@ textarea {
 
 	&_reg {
 	  @include regular;
+	}
+
+	&_noline {
+	  &::before {
+		display: none;
+	  }
 	}
   }
 
@@ -243,6 +249,10 @@ textarea {
 
 	  &-text {
 		margin-left: 1.5px;
+
+		&:hover {
+		  color: initial;
+		}
 	  }
 
 	  &:hover {
@@ -326,9 +336,9 @@ textarea {
 
 	&:hover {
 	  background: lighten($main_color, 3);
-	  -webkit-box-shadow: 0px 0px 35px 4px rgba(255, 255, 255, 0.72);
-	  -moz-box-shadow: 0px 0px 35px 4px rgba(255, 255, 255, 0.72);
-	  box-shadow: 0px 0px 35px 4px rgba(255, 255, 255, 0.72);
+	  -webkit-box-shadow: 0 0 35px 4px rgba(255, 255, 255, 0.72);
+	  -moz-box-shadow: 0 0 35px 4px rgba(255, 255, 255, 0.72);
+	  box-shadow: 0 0 35px 4px rgba(255, 255, 255, 0.72);
 	}
 
 	&-border {
@@ -365,6 +375,144 @@ textarea {
 }
 
 //// Конец главного экрана
+// Главный экран проекта
+.proj {
+  padding-bottom: 40px;
+  background-image: url('../img/project/proj-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &-title {
+	@include xbold;
+	margin-bottom: 6px;
+	font-size: 36px;
+	line-height: 125%;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+  }
+
+  &-desc {
+	margin-bottom: 0;
+	font-size: 18px;
+	line-height: 151%;
+	letter-spacing: 0.03em;
+  }
+
+  &-img {
+	height: 110px;
+  }
+
+  &-text {
+	font-size: 18px;
+	line-height: 130%;
+	letter-spacing: 0.05em;
+
+	&-title {
+	  @include xbold;
+	  margin-bottom: 12px;
+	  font-size: 24px;
+	  line-height: 130%;
+	  letter-spacing: 0.05em;
+	  text-transform: uppercase;
+	}
+  }
+
+  &-info {
+	margin-top: 30px;
+  }
+
+  &-minfo {
+	margin-left: 20px;
+  }
+
+  &-white {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 160px;
+	width: 100%;
+	background-color: $light_color;
+	z-index: 0;
+  }
+
+  &-header {
+	padding-bottom: 25px;
+	display: flex;
+	align-items: center;
+	color: $text_color;
+	z-index: 2;
+  }
+
+  &-present {
+	padding: 20px 10px 10px;
+	background-color: $light_color;
+	box-shadow: 0 0 16px rgba(0, 0, 0, 0.25);
+	color: $text_color;
+
+	&-img {
+	  margin-bottom: 7px;
+	  max-width: 100%;
+	}
+
+	&-info {
+	  margin-top: 15px;
+	  position: relative;
+	  display: flex;
+	  justify-content: space-between;
+
+	  &-block {
+		padding: 10px 0;
+		width: 47%;
+		text-align: center;
+	  }
+
+	  &-text {
+		font-size: 24px;
+		line-height: 125%;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		margin-bottom: 15px;
+	  }
+
+	  &-division {
+		width: 3px;
+		background-color: $main_color;
+	  }
+	}
+
+	&-icon {
+	  pointer-events: none;
+	  user-select: none;
+	  margin-right: 5px;
+
+	  &:last-child {
+		margin-right: 0;
+	  }
+
+	  &-wrapper {
+		display: flex;
+		justify-content: center;
+	  }
+	}
+  }
+
+  &-content {
+	position: relative;
+	margin-top: 30px;
+	display: flex;
+	padding: 25px 30px 10px;
+	background: rgba(0, 11, 48, 0.6);
+	color: $light_color;
+	justify-content: space-between;
+  }
+
+  &-half {
+	width: 49%;
+	z-index: 1;
+  }
+}
+
+//// Главный экран проекта
 // Услуги
 .service {
   &__row {
@@ -404,7 +552,7 @@ textarea {
 	width: 32%;
 	height: 254px;
 	background: #ffffff;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   }
 
   &__item {
@@ -469,7 +617,6 @@ textarea {
 	}
 
 	&-text {
-	  font: 20px;
 	  @include bold;
 	  text-transform: uppercase;
 	  letter-spacing: 0.1em;
@@ -728,8 +875,7 @@ textarea {
 		transition: all 1s ease;
 	  }
 
-	  border-radius: 500px;
-	  box-shadow: 0px 0px 15px #1089ff;
+	  box-shadow: 0 0 15px #1089ff;
 	  border-radius: 40px;
 	  background-color: $light_color;
 	}
@@ -764,7 +910,7 @@ textarea {
   }
 
   &__circle {
-	padding: 40px 34px 0px 0px;
+	padding: 40px 34px 0 0;
   }
 
   &__text {
@@ -983,9 +1129,9 @@ textarea {
 
 	  &:hover {
 		background-color: darken($light_color, 5);
-		-webkit-box-shadow: 0px 0px 25px 2px $btn_color;
-		-moz-box-shadow: 0px 0px 25px 2px $btn_color;
-		box-shadow: 0px 0px 25px 2px $btn_color;
+		-webkit-box-shadow: 0 0 25px 2px $btn_color;
+		-moz-box-shadow: 0 0 25px 2px $btn_color;
+		box-shadow: 0 0 25px 2px $btn_color;
 	  }
 
 	  &:active {
@@ -1034,9 +1180,9 @@ textarea {
 	  transition: color .3s;
 	  font-size: 15px;
 
-	  &:hover {
+	  &:hover, a:hover {
 		cursor: pointer;
-		color: darken($light_color, 10);
+		color: darken($light_color, 5);
 	  }
 	}
   }
@@ -1145,6 +1291,43 @@ textarea {
 	  }
 	}
   }
+  .proj {
+	&-title {
+	  font-size: 28px;
+	}
+
+	&-header {
+	  padding-bottom: 0;
+	}
+
+	&-white {
+	  height: 130px;
+	}
+
+	&-desc {
+	  font-size: 16px;
+	}
+
+	&-img {
+	  height: 90px;
+	}
+
+	&-text {
+	  font-size: 16px;
+
+	  &-title {
+		font-size: 21px;
+	  }
+	}
+
+	&-present {
+	  &-info {
+		&-text {
+		  font-size: 20px;
+		}
+	  }
+	}
+  }
   .service {
 	&__text {
 	  transition: all 0.5s ease;
@@ -1197,7 +1380,7 @@ textarea {
 	}
   }
   .work {
-	margin: 0px;
+	margin: 0;
 
 	&__row {
 	  margin-top: 50px;
@@ -1395,6 +1578,27 @@ textarea {
 	  }
 	}
   }
+  .proj {
+	&-info {
+	  margin-top: 50px;
+	}
+
+	&-text {
+	  margin-bottom: 30px;
+	}
+
+	&-content {
+	  flex-direction: column;
+	}
+
+	&-half {
+	  width: 100%;
+	}
+
+	&-present {
+	  text-align: center;
+	}
+  }
   .service {
 	&__block {
 	  &:hover {
@@ -1583,10 +1787,10 @@ textarea {
 	}
   }
   .work {
-	margin: 0px 0px;
+	margin: 0 0;
 
 	&__text {
-	  padding: 33px 0px;
+	  padding: 33px 0;
 	  max-width: 100%;
 	  font-size: 17px;
 	}
@@ -1594,13 +1798,13 @@ textarea {
 	&__body {
 	  background-color: $light_color;
 	  margin-top: 40px;
-	  box-shadow: 0px 0px 20px #002296;
+	  box-shadow: 0 0 20px #002296;
 	  border-radius: 25px;
 	  max-width: 100%;
 	  height: 100%;
 
 	  &:hover {
-		box-shadow: 0px 0px 15px #1089ff;
+		box-shadow: 0 0 15px #1089ff;
 		border-radius: 25px;
 	  }
 
@@ -1625,7 +1829,7 @@ textarea {
 	}
 
 	&__circle {
-	  padding: 40px 20px 0px 0px;
+	  padding: 40px 20px 0 0;
 	}
 
 	&__icon {
@@ -1851,7 +2055,7 @@ textarea {
 	}
 
 	&__circle {
-	  padding: 40px 15px 0px 0px;
+	  padding: 40px 15px 0 0;
 	}
   }
   .team {
@@ -1938,9 +2142,61 @@ textarea {
 	  font-size: 16px;
 	}
   }
+  .proj {
+	&-text {
+	  font-size: 15px;
+
+	  &-title {
+		font-size: 18px;
+	  }
+	}
+
+	&-info {
+	  margin-top: 35px;
+	}
+
+	&-title {
+	  font-size: 26px;
+	}
+
+	&-desc {
+	  font-size: 15px;
+	}
+
+	&-img {
+	  height: 80px;
+	}
+
+	&-white {
+	  height: 100px;
+	}
+
+	&-content {
+	  background: none;
+	  padding-top: 10px;
+	  padding-left: 10px;
+	  padding-right: 10px;
+	}
+
+	&-present-info {
+	  &-text {
+		font-size: 16px;
+		margin-bottom: 7px;
+	  }
+
+	  &-division {
+		width: 2px;
+	  }
+	}
+
+	&-present-icon {
+	  margin-right: 3px;
+	  max-width: 18%;
+	}
+  }
   .service {
 	&__icon {
-	  padding: 1% 0% 0px 6.6%;
+	  padding: 1% 0 0 6.6%;
 	}
 
 	&__text {
@@ -2118,6 +2374,52 @@ textarea {
 	&-button {
 	  font-size: 13px;
 	  letter-spacing: 0.1em;
+	}
+  }
+  .proj {
+	&-img {
+	  height: 60px;
+	}
+
+	&-minfo {
+	  margin-left: 10px;
+	}
+
+	&-title {
+	  font-size: 20px;
+	}
+
+	&-desc {
+	  font-size: 13px;
+	}
+
+	&-white {
+	  height: 80px;
+	}
+
+	&-text {
+	  font-size: 14px;
+
+	  &-title {
+		font-size: 16px;
+		margin-bottom: 8px;
+	  }
+	}
+
+	&-header {
+	  padding-left: 8px;
+	  padding-right: 8px;
+	}
+
+	&-content {
+	  padding-left: 0;
+	  padding-right: 0;
+	}
+
+	&-present-info {
+	  &-text {
+		font-size: 14px;
+	  }
 	}
   }
   .slide-1 .research-slide-item {
