@@ -1,0 +1,157 @@
+.slide-1 .research-slide-item {
+	font-size: 41px;
+	letter-spacing: 0.09em;
+	line-height: 128%;
+}
+
+.slide-2 .research-slide-item {
+	font-size: 44px;
+	line-height: 120%;
+	letter-spacing: 0.08em;
+}
+
+.slide-3 .research-slide-item {
+	font-size: 102px;
+	line-height: 83%;
+	letter-spacing: 0.08em;
+}
+
+@media (max-width: 1199.9px) {
+	.main-title-square {
+		height: 20px;
+		width: 20px;
+		left: 153px;
+	}
+	.slide-1 .research-slide-item {
+		font-size: 35px;
+		letter-spacing: 0.08em;
+		line-height: 146%;
+	}
+
+	.slide-2 .research-slide-item {
+		font-size: 37px;
+		line-height: 125%;
+		letter-spacing: 0.07em;
+	}
+
+	.slide-3 .research-slide-item {
+		font-size: 87px;
+		line-height: 97%;
+		letter-spacing: 0.06em;
+	}
+}
+
+@media (max-width: 991.9px) {
+	.main-title {
+		&-square {
+			left: 25px;
+		}
+		&-label {
+			left: 33px;
+		}
+	}
+	.slide-1 .research-slide-item {
+		font-size: 31px;
+		letter-spacing: 0.1em;
+		line-height: 118%;
+	}
+
+	.slide-2 .research-slide-item {
+		font-size: 32px;
+		line-height: 118%;
+		letter-spacing: 0.1em;
+	}
+
+	.slide-3 .research-slide-item {
+		font-size: 58px;
+		line-height: 102%;
+	}
+}
+
+@media (max-width: 767.9px) {
+	.main-title {
+		&-square {
+			left: 23px;
+		}
+		&-label {
+			left: 30px;
+		}
+	}
+	.slide-1 .research-slide-item {
+		font-size: 25px;
+		letter-spacing: 0.09em;
+		line-height: 125%;
+	}
+
+	.slide-2 .research-slide-item {
+		font-size: 25px;
+		line-height: 127%;
+		letter-spacing: 0.09em;
+	}
+
+	.slide-3 .research-slide-item {
+		line-height: 99%;
+		font-size: 51px;
+		letter-spacing: 0.08em;
+	}
+}
+
+@media (max-width: 575.9px) {
+	.main-title {
+		&-square {
+			height: 16px;
+			width: 16px;
+			left: 20px;
+		}
+		&-label {
+			left: 25px;
+		}
+	}
+	.slide-1 .research-slide-item {
+		letter-spacing: 0.07em;
+		font-size: 22px;
+		line-height: 141%;
+	}
+	
+	.slide-2 .research-slide-item {
+		font-size: 20px;
+		line-height: 155%;
+		letter-spacing: 0;
+	}
+
+	.slide-3 .research-slide-item {
+		letter-spacing: 0.05em;
+		font-size: 44px;
+		line-height: 112%;
+	}
+}
+
+@media (max-width: 424.9px) {
+	.main-title {
+		&-square {
+			height: 6.5px;
+			width: 6.5px;
+			left: 0;
+		}
+
+		&-label {
+			left: 3px;
+		}
+	}
+	.slide-1 .research-slide-item {
+		font-size: 18px;
+		letter-spacing: 0;
+		line-height: 176%;
+	}
+
+	.slide-2 .research-slide-item {
+		font-size: 16px;
+		line-height: 200%;
+	}
+
+	.slide-3 .research-slide-item {
+		font-size: 38px;
+		line-height: 136%;
+		letter-spacing: 0.01em;
+	}
+}

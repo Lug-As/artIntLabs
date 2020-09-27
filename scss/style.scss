@@ -634,6 +634,7 @@ textarea {
   }
 
   &-slider {
+  	overflow: hidden;
 	div {
 	  outline: none;
 	}
@@ -2382,7 +2383,7 @@ textarea {
 
 	  &-label {
 		top: 3px;
-		left: 0;
+		left: 3px;
 		font-size: 9px;
 	  }
 	}
